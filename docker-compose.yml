@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: postgre-lab-demo-db
+    environment:
+      POSTGRES_DB: demo
+      POSTGRES_USER: demo
+      POSTGRES_PASSWORD: demo
+    ports:
+      - "5433:5432"
+    volumes:
+      - pg_demo_data:/var/lib/postgresql/data
+
+volumes:
+  pg_demo_data:
